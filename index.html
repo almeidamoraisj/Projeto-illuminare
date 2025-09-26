@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clínica Psicologia Avançada</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- link para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header id="header">
+    <div class="container">
+      <div class="logo">Clínica Avançada</div>
+      <nav id="nav">
+        <ul>
+          <li><a href="#hero">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#agendamento">Agendamento</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+      <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+    </div>
+  </header>
+
+  <!-- Hero com vídeo/overlay -->
+  <section id="hero">
+    <video autoplay muted loop id="hero-video">
+      <source src="seu-video.mp4" type="video/mp4">
+      Seu navegador não suporta vídeo de fundo.
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <h1>Bem-estar Mental & Crescimento Pessoal</h1>
+      <p>Cuidando de você com empatia, técnica e suporte contínuo.</p>
+      <a href="#agendamento" class="btn-primary">Agende uma sessão</a>
+    </div>
+  </section>
+
+  <section id="sobre" class="section-reveal">
+    <div class="container">
+      <h2>Sobre Nós</h2>
+      <div class="sobre-grid">
+        <div>
+          <p>Clínica especializada em Psicologia clínica, familiar e infantil. Atuação presencial e online. Nossa missão é promover saúde mental com ética e cuidado individualizado.</p>
+        </div>
+        <div>
+          <img src="imagem-sobre.jpg" alt="Foto da clínica">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos" class="section-reveal">
+    <div class="container">
+      <h2>Serviços</h2>
+      <div class="cards-servicos">
+        <div class="card-servico">
+          <i class="fas fa-user-md fa-3x"></i>
+          <h3>Psicoterapia Individual</h3>
+          <p>Abordagens terapêuticas personalizadas para adultos.</p>
+        </div>
+        <div class="card-servico">
+          <i class="fas fa-child fa-3x"></i>
+          <h3>Psicoterapia Infantil</h3>
+          <p>Cuidados especiais para crianças e adolescentes.</p>
+        </div>
+        <div class="card-servico">
+          <i class="fas fa-users fa-3x"></i>
+          <h3>Casais & Família</h3>
+          <p>Suporte em relacionamentos, dinâmicas familiares e ajustes.</p>
+        </div>
+        <div class="card-servico">
+          <i class="fas fa-video fa-3x"></i>
+          <h3>Atendimento Online</h3>
+          <p>Flexibilidade para sessões remotas com segurança.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="depoimentos" class="section-reveal">
+    <div class="container">
+      <h2>Depoimentos</h2>
+      <div class="slider-depoimentos">
+        <div class="depoimento">
+          <p>“Após iniciar as sessões me sinto mais confiante, equilibrado e com ferramenta para lidar com meus conflitos internos.”</p>
+          <span>- João Silva</span>
+        </div>
+        <div class="depoimento">
+          <p>“A clínica me ajudou a entender minha ansiedade de forma profunda. Muito grata!”</p>
+          <span>- Maria Costa</span>
+        </div>
+        <div class="depoimento">
+          <p>“Excelente atendimento, ambiente acolhedor, profissionais competentes.”</p>
+          <span>- Carla Ferreira</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="agendamento" class="section-reveal">
+    <div class="container">
+      <h2>Agende sua Sessão</h2>
+      <form id="form-agendamento">
+        <div class="form-group">
+          <input type="text" name="nome" placeholder="Seu nome" required>
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Seu e-mail" required>
+        </div>
+        <div class="form-group">
+          <input type="date" name="data" required>
+        </div>
+        <div class="form-group">
+          <select name="servico" required>
+            <option value="">Selecione o serviço</option>
+            <option>Psicoterapia Individual</option>
+            <option>Infantil</option>
+            <option>Casais & Família</option>
+            <option>Online</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <textarea name="mensagem" placeholder="Alguma observação?" rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Enviar Agendamento</button>
+        <p class="resultado" id="resultado-agendamento"></p>
+      </form>
+    </div>
+  </section>
+
+  <section id="contato" class="section-reveal">
+    <div class="container">
+      <h2>Contato</h2>
+      <div class="contato-grid">
+        <div class="contato-info">
+          <p><i class="fas fa-phone"></i> (XX) XXXXX‑XXXX</p>
+          <p><i class="fas fa-envelope"></i> contato@clinicaexemplo.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Rua Exemplo, 123, Sua Cidade</p>
+        </div>
+        <div class="contato-mapa">
+          <!-- Pode inserir Google Maps embed ou Leaflet etc. -->
+          <iframe src="https://maps.google.com/maps?q=SuaCidade+SeuEndereco&output=embed"
+                  width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <p>&copy; 2025 Clínica Psicologia Avançada. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

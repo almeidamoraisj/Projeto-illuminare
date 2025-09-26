@@ -1,0 +1,327 @@
+/* Reset & variáveis */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cor-primaria: #4f7d7d;
+  --cor-secundaria: #f1f1f1;
+  --texto-claro: #fff;
+  --texto-escuro: #333;
+  --transition-fast: 0.3s;
+  --transition-slow: 0.6s;
+  --shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--texto-escuro);
+  background-color: var(--cor-secundaria);
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header / Navbar */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+  transition: background var(--transition-fast), box-shadow var(--transition-fast);
+  padding: 20px 0;
+}
+
+header.sticky {
+  background: var(--cor-primaria);
+  box-shadow: var(--shadow);
+  padding: 10px 0;
+}
+
+header .logo {
+  font-size: 1.8rem;
+  color: var(--texto-claro);
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  color: var(--texto-claro);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+nav ul li a:hover {
+  color: #ddd;
+}
+
+/* Menu mobile toggle */
+.menu-toggle {
+  display: none;
+  color: var(--texto-claro);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+  nav.active {
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: var(--cor-primaria);
+    width: 200px;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* Hero */
+#hero {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+#hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--texto-claro);
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  animation: fadeInDown 1s ease-out;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin: 20px 0;
+  animation: fadeInUp 1s ease-out;
+}
+
+.btn-primary {
+  padding: 12px 30px;
+  background: var(--cor-primaria);
+  color: var(--texto-claro);
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.btn-primary:hover {
+  background: #3f6666;
+  transform: translateY(-3px);
+}
+
+/* Sections Reveal */
+.section-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.section-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Sobre Seção */
+#sobre .sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+#sobre img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+/* Serviços */
+.cards-servicos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card-servico {
+  background: var(--texto-claro);
+  padding: 30px 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card-servico:hover {
+  transform: translateY(-8px);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 20px;
+}
+
+.card-servico i {
+  color: var(--cor-primaria);
+  margin-bottom: 15px;
+}
+
+/* Depoimentos */
+.slider-depoimentos {
+  position: relative;
+  overflow: hidden;
+}
+
+.depoimento {
+  padding: 20px;
+  min-height: 150px;
+  text-align: center;
+  font-style: italic;
+  color: #555;
+}
+
+.depoimento span {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: var(--cor-primaria);
+}
+
+/* Agendamento */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+form input, form select, form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color var(--transition-fast);
+}
+
+form input:focus, form select:focus, form textarea:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+}
+
+.resultado {
+  text-align: center;
+  margin-top: 10px;
+  color: green;
+  font-weight: bold;
+}
+
+/* Contato */
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contato-info i {
+  margin-right: 10px;
+  color: var(--cor-primaria);
+}
+
+/* Footer */
+footer {
+  background: var(--cor-primaria);
+  color: var(--texto-claro);
+  text-align: center;
+  padding: 20px 0;
+}
+
+.footer-social a {
+  margin: 0 10px;
+  color: var(--texto-claro);
+  font-size: 1.2rem;
+  transition: color var(--transition-fast);
+}
+
+.footer-social a:hover {
+  color: #ddd;
+}
+
+/* Animações chave */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
