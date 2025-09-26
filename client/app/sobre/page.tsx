@@ -1,0 +1,1 @@
+export default function Page() { return (<h1 className='text-center py-20 text-2xl'>Sobre a Clínica</h1>); }

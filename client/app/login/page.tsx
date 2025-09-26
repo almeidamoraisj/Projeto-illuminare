@@ -1,0 +1,1 @@
+export default function Page() { return (<h1 className='text-center py-20 text-2xl'>Página de Login</h1>); }
